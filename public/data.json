@@ -1,0 +1,71 @@
+{
+    "classes": [
+      {
+        "name": "French Beginner",
+        "instructor": {
+          "name": "Sophie Martin",
+          "image": "https://example.com/images/sophie_martin.jpg",
+          "email": "sophie@example.com",
+          "bio": "Sophie Martin is a certified French language instructor with over 10 years of teaching experience."
+        },
+        "availableSeats": 10,
+        "price": 200
+      },
+      {
+        "name": "Spanish Intermediate",
+        "instructor": {
+          "name": "Carlos Gomez",
+          "image": "https://example.com/images/carlos_gomez.jpg",
+          "email": "carlos@example.com",
+          "bio": "Carlos Gomez is a native Spanish speaker and experienced language instructor."
+        },
+        "availableSeats": 5,
+        "price": 250
+      },
+      {
+        "name": "German Advanced",
+        "instructor": {
+          "name": "Lena Fischer",
+          "image": "https://example.com/images/lena_fischer.jpg",
+          "email": "lena@example.com",
+          "bio": "Lena Fischer is a certified German language instructor and a native German speaker."
+        },
+        "availableSeats": 8,
+        "price": 300
+      },
+      {
+        "name": "Italian Conversation",
+        "instructor": {
+          "name": "Giulia Rossi",
+          "image": "https://example.com/images/giulia_rossi.jpg",
+          "email": "giulia@example.com",
+          "bio": "Giulia Rossi is a passionate Italian language teacher with a focus on conversational skills."
+        },
+        "availableSeats": 12,
+        "price": 180
+      },
+      {
+        "name": "Mandarin Chinese for Business",
+        "instructor": {
+          "name": "Li Wei",
+          "image": "https://example.com/images/li_wei.jpg",
+          "email": "liwei@example.com",
+          "bio": "Li Wei is a professional Mandarin Chinese instructor with expertise in business communication."
+        },
+        "availableSeats": 15,
+        "price": 220
+      },
+      {
+        "name": "Japanese Beginner",
+        "instructor": {
+          "name": "Yuki Nakamura",
+          "image": "https://example.com/images/yuki_nakamura.jpg",
+          "email": "yuki@example.com",
+          "bio": "Yuki Nakamura is a native Japanese speaker and experienced language teacher."
+        },
+        "availableSeats": 10,
+        "price": 230
+      }
+    ]
+  }
+  
