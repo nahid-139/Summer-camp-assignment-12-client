@@ -128,7 +128,7 @@ import Swal from "sweetalert2";
           </p>
         </div>
         <div className="">
-        <img src='https://www.godealergo.com/assets/images/secure-login.gif'alt="" />
+        <img src='https://media.tenor.com/p0G_bmA2vSYAAAAd/login.gif'alt="" />
         </div>
       </div>
     );
