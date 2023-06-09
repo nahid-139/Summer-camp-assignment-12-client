@@ -2,6 +2,7 @@
     "classes": [
       {
         "name": "French Beginner",
+        "category": "popular",
         "instructor": {
           "name": "Sophie Martin",
           "image": "https://example.com/images/sophie_martin.jpg",
@@ -13,6 +14,7 @@
       },
       {
         "name": "Spanish Intermediate",
+        "category": "popular",
         "instructor": {
           "name": "Carlos Gomez",
           "image": "https://example.com/images/carlos_gomez.jpg",
@@ -24,6 +26,7 @@
       },
       {
         "name": "German Advanced",
+        "category": "popular",
         "instructor": {
           "name": "Lena Fischer",
           "image": "https://example.com/images/lena_fischer.jpg",
@@ -35,6 +38,7 @@
       },
       {
         "name": "Italian Conversation",
+        "category": "popular",
         "instructor": {
           "name": "Giulia Rossi",
           "image": "https://example.com/images/giulia_rossi.jpg",
@@ -46,6 +50,7 @@
       },
       {
         "name": "Mandarin Chinese for Business",
+        "category": "popular",
         "instructor": {
           "name": "Li Wei",
           "image": "https://example.com/images/li_wei.jpg",
@@ -57,6 +62,8 @@
       },
       {
         "name": "Japanese Beginner",
+        "category": "popular",
+        "language": "Japanese",
         "instructor": {
           "name": "Yuki Nakamura",
           "image": "https://example.com/images/yuki_nakamura.jpg",
@@ -65,6 +72,32 @@
         },
         "availableSeats": 10,
         "price": 230
+      },
+      {
+        "name": "Portuguese for Travel",
+        "category": " Portugal",
+        "language": "Portuguese",
+        "instructor": {
+          "name": "Isabella Santos",
+          "image": "https://example.com/images/isabella_santos.jpg",
+          "email": "isabella@example.com",
+          "bio": "Isabella Santos is an enthusiastic Portuguese language instructor specializing in travel-related language skills."
+        },
+        "availableSeats": 7,
+        "price": 190
+      },
+      {
+        "name": "Russian Intermediate",
+        "category": "Russian",
+        "language": "Russian",
+        "instructor": {
+          "name": "Dmitri Ivanov",
+          "image": "https://example.com/images/dmitri_ivanov.jpg",
+          "email": "dmitri@example.com",
+          "bio": "Dmitri Ivanov is a native Russian speaker and experienced language instructor offering intermediate-level classes."
+        },
+        "availableSeats": 6,
+        "price": 260
       }
     ]
   }
