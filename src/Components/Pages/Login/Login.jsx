@@ -122,7 +122,7 @@ import Swal from "sweetalert2";
           </div>
           <p className="text-lg text-center sm:px-6 dark:text-gray-400">
             Don't have an account?
-            <Link to="/register" className="underline dark:text-gray-900">
+            <Link to="/signup" className="underline dark:text-gray-900">
               Register
             </Link>
           </p>
