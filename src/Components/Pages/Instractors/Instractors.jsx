@@ -14,13 +14,16 @@ const Instractors = () => {
         <div>
             <h1 className='text-center font-bold text-3xl mt-10 mb-4'> Hi I am your Instractor.</h1>
 
-            <div>
+            <div className ='grid grid-cols-2 mt-10 text-center mx-20'>
             {
-                instractors.map(item =><div
+                instractors.map(item =><div className='border border-red-700 mx-6 my-6'
                 key={item._id}
                 
-                >
-                     <h1>name is{item.instructor.name}</h1>
+                >   
+                     <img src="" alt="" />
+                     <h1 className='mt-6'>name is{item.instructor.name}</h1>
+                     <h1 className='mt-2'>{item.instructor.email}</h1>
+            
 
 
                 </div>)
