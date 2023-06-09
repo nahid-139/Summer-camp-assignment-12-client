@@ -39,24 +39,30 @@ const Classes = () => {
                 key={item._id}
                 
                 >
-
-                   
-                     
-
-                     {item?.availableSeats===0 ? (<><div className='bg-red-600'>
+                     {item?.availableSeats===0 ?
+                      (<><div className='bg-red-600'>
                      <h1>name is{item.name}</h1>
                      <h1>Aviaable Seats {item.availableSeats}</h1>
-                     {user?.email ? (<Link to='/'><button  disabled={item.availableSeats === 0} className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button></Link>) : (<><Link><button  onClick={handleClick}  className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button></Link></>)}
-                     </div></>) : (<><div>
+                     {user?.email ? 
+                     (<Link to='/'>
+                        <button  disabled={item.availableSeats === 0} className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button>
+                        </Link>
+                        ) : (<>
+                        <Link>
+                        <button  onClick={handleClick}  className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button></Link></>)}
+                     </div></>
+                     ) : (
+                     <><div>
                      <h1>name is{item.name}</h1>
                      <h1>Aviaable Seats {item.availableSeats}</h1>
-                     {user?.email ? (<Link to='/'><button  disabled={item.availableSeats === 0} className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button></Link>) : (<><Link><button  onClick={handleClick}  className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button></Link></>)}
+                     {user?.email ?
+                      (<Link
+                       to='/'><button  disabled={item.availableSeats === 0} className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button>
+                       </Link>) : (<>
+                       <Link>
+                       <button  onClick={handleClick}  className='bg-slate-700 text-white px-6 py-2 mt-4'>Select Course</button>
+                       </Link></>)}
                      </div></>)}
-                     
-
-                     
-
-
                 </div>)
             }
             </div>
