@@ -11,6 +11,7 @@ import Home from './Components/Pages/Home/Home/Home.jsx';
 import Login from './Components/Pages/Login/Login.jsx';
 import UseContext from './Components/Context/UseContext.jsx';
 import Register from './Components/Pages/Register/Register.jsx';
+import Classes from './Components/Pages/Classes/Classes.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Register></Register>
-      }
+      },
+      {
+        path: '/classes',
+        element: <Classes></Classes>
+      },
      
     ]
   }
