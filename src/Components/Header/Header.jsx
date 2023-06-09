@@ -37,7 +37,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/instractors"
                 className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Instractor
