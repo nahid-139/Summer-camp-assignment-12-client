@@ -37,7 +37,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/blog"
+                to="/"
                 className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Instractor
@@ -45,7 +45,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/blog"
+                to="/classes"
                 className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Classes
@@ -54,7 +54,7 @@ const Header = () => {
            
             <li>
                   <Link
-                    to="/allToys"
+                    to="/"
                     className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                   >
                    Dashboard
