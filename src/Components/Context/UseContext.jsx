@@ -8,7 +8,6 @@ export const auth= getAuth(app)
 const UseContext = ({children}) => {
     const [user,setuser]=useState(null)
     const [loader,setLoader]=useState(true)
-    console.log(user)
   
 const createUser=(email,password)=>{
     setLoader(true)

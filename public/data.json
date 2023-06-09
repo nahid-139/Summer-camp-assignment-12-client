@@ -1,104 +1,109 @@
-{
-    "classes": [
-      {
-        "name": "French Beginner",
-        "category": "popular",
-        "instructor": {
-          "name": "Sophie Martin",
-          "image": "https://example.com/images/sophie_martin.jpg",
-          "email": "sophie@example.com",
-          "bio": "Sophie Martin is a certified French language instructor with over 10 years of teaching experience."
-        },
-        "availableSeats": 10,
-        "price": 200
-      },
-      {
-        "name": "Spanish Intermediate",
-        "category": "popular",
-        "instructor": {
-          "name": "Carlos Gomez",
-          "image": "https://example.com/images/carlos_gomez.jpg",
-          "email": "carlos@example.com",
-          "bio": "Carlos Gomez is a native Spanish speaker and experienced language instructor."
-        },
-        "availableSeats": 5,
-        "price": 250
-      },
-      {
-        "name": "German Advanced",
-        "category": "popular",
-        "instructor": {
-          "name": "Lena Fischer",
-          "image": "https://example.com/images/lena_fischer.jpg",
-          "email": "lena@example.com",
-          "bio": "Lena Fischer is a certified German language instructor and a native German speaker."
-        },
-        "availableSeats": 8,
-        "price": 300
-      },
-      {
-        "name": "Italian Conversation",
-        "category": "popular",
-        "instructor": {
-          "name": "Giulia Rossi",
-          "image": "https://example.com/images/giulia_rossi.jpg",
-          "email": "giulia@example.com",
-          "bio": "Giulia Rossi is a passionate Italian language teacher with a focus on conversational skills."
-        },
-        "availableSeats": 12,
-        "price": 180
-      },
-      {
-        "name": "Mandarin Chinese for Business",
-        "category": "popular",
-        "instructor": {
-          "name": "Li Wei",
-          "image": "https://example.com/images/li_wei.jpg",
-          "email": "liwei@example.com",
-          "bio": "Li Wei is a professional Mandarin Chinese instructor with expertise in business communication."
-        },
-        "availableSeats": 15,
-        "price": 220
-      },
-      {
-        "name": "Japanese Beginner",
-        "category": "popular",
-        "language": "Japanese",
-        "instructor": {
-          "name": "Yuki Nakamura",
-          "image": "https://example.com/images/yuki_nakamura.jpg",
-          "email": "yuki@example.com",
-          "bio": "Yuki Nakamura is a native Japanese speaker and experienced language teacher."
-        },
-        "availableSeats": 10,
-        "price": 230
-      },
-      {
-        "name": "Portuguese for Travel",
-        "category": " Portugal",
-        "language": "Portuguese",
-        "instructor": {
-          "name": "Isabella Santos",
-          "image": "https://example.com/images/isabella_santos.jpg",
-          "email": "isabella@example.com",
-          "bio": "Isabella Santos is an enthusiastic Portuguese language instructor specializing in travel-related language skills."
-        },
-        "availableSeats": 7,
-        "price": 190
-      },
-      {
-        "name": "Russian Intermediate",
-        "category": "Russian",
-        "language": "Russian",
-        "instructor": {
-          "name": "Dmitri Ivanov",
-          "image": "https://example.com/images/dmitri_ivanov.jpg",
-          "email": "dmitri@example.com",
-          "bio": "Dmitri Ivanov is a native Russian speaker and experienced language instructor offering intermediate-level classes."
-        },
-        "availableSeats": 6,
-        "price": 260
-      }
-    ]
+[
+  {
+    "_id": "1",
+    "name": "French Beginner",
+    "category": "popular",
+    "instructor": {
+      "name": "Sophie Martin",
+      "image": "https://example.com/images/sophie_martin.jpg",
+      "email": "sophie@example.com",
+      "bio": "Sophie Martin is a certified French language instructor with over 10 years of teaching experience."
+    },
+    "availableSeats": 10,
+    "price": 200
+  },
+  {
+    "_id": "2",
+    "name": "Spanish Intermediate",
+    "category": "popular",
+    "instructor": {
+      "name": "Carlos Gomez",
+      "image": "https://example.com/images/carlos_gomez.jpg",
+      "email": "carlos@example.com",
+      "bio": "Carlos Gomez is a native Spanish speaker and experienced language instructor."
+    },
+    "availableSeats": 5,
+    "price": 250
+  },
+  {
+    "_id": "3",
+    "name": "German Advanced",
+    "category": "popular",
+    "instructor": {
+      "name": "Lena Fischer",
+      "image": "https://example.com/images/lena_fischer.jpg",
+      "email": "lena@example.com",
+      "bio": "Lena Fischer is a certified German language instructor and a native German speaker."
+    },
+    "availableSeats": 8,
+    "price": 300
+  },
+  {
+    "_id": "4",
+    "name": "Italian Conversation",
+    "category": "popular",
+    "instructor": {
+      "name": "Giulia Rossi",
+      "image": "https://example.com/images/giulia_rossi.jpg",
+      "email": "giulia@example.com",
+      "bio": "Giulia Rossi is a passionate Italian language teacher with a focus on conversational skills."
+    },
+    "availableSeats": 12,
+    "price": 180
+  },
+  {
+    "_id": "5",
+    "name": "Mandarin Chinese for Business",
+    "category": "popular",
+    "instructor": {
+      "name": "Li Wei",
+      "image": "https://example.com/images/li_wei.jpg",
+      "email": "liwei@example.com",
+      "bio": "Li Wei is a professional Mandarin Chinese instructor with expertise in business communication."
+    },
+    "availableSeats": 15,
+    "price": 220
+  },
+  {
+    "_id": "6",
+    "name": "Japanese Beginner",
+    "category": "popular",
+    "language": "Japanese",
+    "instructor": {
+      "name": "Yuki Nakamura",
+      "image": "https://example.com/images/yuki_nakamura.jpg",
+      "email": "yuki@example.com",
+      "bio": "Yuki Nakamura is a native Japanese speaker and experienced language teacher."
+    },
+    "availableSeats": 10,
+    "price": 230
+  },
+  {
+    "_id": "7",
+    "name": "Portuguese for Travel",
+    "category": " Portugal",
+    "language": "Portuguese",
+    "instructor": {
+      "name": "Isabella Santos",
+      "image": "https://example.com/images/isabella_santos.jpg",
+      "email": "isabella@example.com",
+      "bio": "Isabella Santos is an enthusiastic Portuguese language instructor specializing in travel-related language skills."
+    },
+    "availableSeats": 7,
+    "price": 190
+  },
+  {
+    "_id": "8",
+    "name": "Russian Intermediate",
+    "category": "Russian",
+    "language": "Russian",
+    "instructor": {
+      "name": "Dmitri Ivanov",
+      "image": "https://example.com/images/dmitri_ivanov.jpg",
+      "email": "dmitri@example.com",
+      "bio": "Dmitri Ivanov is a native Russian speaker and experienced language instructor offering intermediate-level classes."
+    },
+    "availableSeats": 6,
+    "price": 260
   }
-  
+]
