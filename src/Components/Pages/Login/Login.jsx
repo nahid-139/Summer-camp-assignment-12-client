@@ -2,15 +2,13 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
   } from "firebase/auth";
-  import { useContext } from "react";
-  import { FaGoogle } from "react-icons/fa";
-  import { Link, useLocation, useNavigate } from "react-router-dom";
-
-// import UseTitle from "../UseTitle/UseTitle";
+import { useContext, useState } from "react";
+import { FaGoogle } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext, auth } from "../../Context/UseContext";
 import Swal from "sweetalert2";
   const Login = () => {
-//    UseTitle('Log In')
+    const [showPassword, setShowPassword] = useState(false);
     const { signIn } = useContext(AuthContext);
  
     const googleProvider = new GoogleAuthProvider();
@@ -62,7 +60,9 @@ import Swal from "sweetalert2";
         });
     };
 
-  
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+    };
     return (
       <div className="lg:flex sm:flex-col py-20 lg:flex-row justify-evenly">
         <div className="lg:w-1/2 max-w-md p-8 space-y-3 rounded-xl shadow-xl  dark:text-gray-900">
@@ -88,13 +88,16 @@ import Swal from "sweetalert2";
                 Password
               </label>
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 id="password"
                 placeholder="Password"
                 className="w-full text-lg px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
                 required
               />
+              <button type="button" onClick={togglePasswordVisibility}>
+          {showPassword ? 'Hide Password' : 'Show Password'}
+        </button>
               <div className="flex justify-end text-lg dark:text-gray-400">
                 <button>Forgot Password?</button>
               </div>
