@@ -34,6 +34,7 @@ const logOut=()=>{
 const updateprofile=(name)=>{
     return updateProfile(auth.currentUser,{
         displayName:name,
+     
     })
 }
 

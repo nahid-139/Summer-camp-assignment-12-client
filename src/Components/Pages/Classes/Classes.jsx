@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
 
 const Classes = () => {
-   
+    const navigate = useNavigate();
     const {user} = useContext(AuthContext)
     console.log(user);
     const [classes ,setClasses] =useState([]);
@@ -19,13 +19,20 @@ const Classes = () => {
 
     const handleClick = () => {
       
-        // Show SweetAlert2 message
         Swal.fire({
-          title: 'Your not Logged In',
-          text: 'Please Log In Frist.',
-          icon: 'info',
-          confirmButtonText: 'OK'
-        });
+            title: 'Your not Logged In',
+              text: 'Please Log In Frist.',
+              icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Login now!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate('/login', {state: {from: location}})
+            }
+          })
+
       };
 
 
