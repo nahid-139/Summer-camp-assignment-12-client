@@ -4,6 +4,7 @@ import {  FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { auth, AuthContext } from "../../Context/UseContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -79,6 +80,9 @@ const Register = () => {
   };
   return (
     <div className="flex py-20  justify-evenly mx-40">
+       <Helmet>
+                <title>LinGo | Sign Up</title>
+            </Helmet>
       
       <div className="w-full max-w-lg p-8 space-y-3 rounded-xl shadow-xl bg-gray-200 dark:text-gray-900">
         <h1 className="text-2xl font-bold text-center py-2">Register</h1>
@@ -183,7 +187,7 @@ const Register = () => {
         </p>
       </div>
       <div className="w-1/2 mt-40">
-        <img src="https://cdn.dribbble.com/users/1107512/screenshots/3997677/media/0435a89ab9eea9a83e5465156053128a.gif" alt="" />
+        <img src="https://media.tenor.com/p0G_bmA2vSYAAAAd/login.gif" alt="" />
       </div>
     </div>
   );

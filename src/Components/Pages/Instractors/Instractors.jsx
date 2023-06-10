@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Instractors = () => {
 
@@ -12,6 +13,9 @@ const Instractors = () => {
     console.log(instractors);
     return (
         <div>
+             <Helmet>
+                <title>LinGo | Instractors</title>
+            </Helmet>
             <h1 className='text-center font-bold text-3xl mt-10 mb-4'> Hi I am your Instractor.</h1>
 
             <div className ='grid grid-cols-2 mt-10 text-center mx-20'>

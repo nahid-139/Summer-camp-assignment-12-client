@@ -7,6 +7,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext, auth } from "../../Context/UseContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
   const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signIn } = useContext(AuthContext);
@@ -65,6 +66,9 @@ import Swal from "sweetalert2";
     };
     return (
       <div className="lg:flex sm:flex-col py-20 lg:flex-row justify-evenly">
+         <Helmet>
+                <title>LinGo | LogIn</title>
+            </Helmet>
         <div className="lg:w-1/2 max-w-md p-8 space-y-3 rounded-xl shadow-xl  dark:text-gray-900">
           <h1 className="text-2xl font-bold text-center py-2">Login</h1>
           <form

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UseContext';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Classes = () => {
    
@@ -30,6 +31,10 @@ const Classes = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>LinGo | Classes</title>
+            </Helmet>
+
             <h1 className='text-center font-bold text-2xl mt-10 mb-4'>Hi Welcome Our classes.</h1>
 
             <div className='grid grid-cols-2 text-center'>
