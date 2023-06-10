@@ -13,6 +13,7 @@ import UseContext from './Components/Context/UseContext.jsx';
 import Register from './Components/Pages/Register/Register.jsx';
 import Classes from './Components/Pages/Classes/Classes.jsx';
 import Instractors from './Components/Pages/Instractors/Instractors.jsx';
+import DashBoard from './Components/Pages/DashBoard/DashBoard.jsx';
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: '/instractors',
         element: <Instractors></Instractors>
+      },
+     
+      {
+        path: '/dashboard',
+        element:<DashBoard></DashBoard>
       },
      
     ]
