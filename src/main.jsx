@@ -14,6 +14,7 @@ import Register from './Components/Pages/Register/Register.jsx';
 import Classes from './Components/Pages/Classes/Classes.jsx';
 import Instractors from './Components/Pages/Instractors/Instractors.jsx';
 import DashBoard from './Components/Pages/DashBoard/DashBoard.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -56,7 +57,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UseContext>
-    <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </UseContext>
   </React.StrictMode>
 );
