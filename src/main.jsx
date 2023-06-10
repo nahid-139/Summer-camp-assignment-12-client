@@ -15,8 +15,15 @@ import Classes from './Components/Pages/Classes/Classes.jsx';
 import Instractors from './Components/Pages/Instractors/Instractors.jsx';
 import DashBoard from './Components/Pages/DashBoard/DashBoard.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
-
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,7 +65,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UseContext>
       <HelmetProvider>
-        <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+       
       </HelmetProvider>
     </UseContext>
   </React.StrictMode>
