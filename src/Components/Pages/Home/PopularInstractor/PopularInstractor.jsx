@@ -4,7 +4,7 @@ const PopularInstractor = () => {
 
     const [instractors ,setInstractors] =useState([]);
     useEffect(()=>{
-        fetch('data.json')
+        fetch('http://localhost:5000/allData')
         .then(res => res.json())
         .then(data =>{
             setInstractors(data.filter(item =>item.category === 'popular'))})
