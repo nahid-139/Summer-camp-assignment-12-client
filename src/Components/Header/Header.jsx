@@ -54,7 +54,7 @@ const Header = () => {
            
             <li>
                   <Link
-                    to="/dashboard"
+                    to="/dashboard/myclasses"
                     className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                   >
                    Dashboard
@@ -119,27 +119,22 @@ const Header = () => {
               className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
               onClick={() => setIsMenuOpen(true)}
             >
-              <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-                />
-              </svg>
+              <FaRegMinusSquare></FaRegMinusSquare>
             </button>
             {isMenuOpen && (
               <div className="absolute top-0 left-0 w-full">
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      
+                      <Link
+                        to="/"
+                        title="FoodFly"
+                        className="inline-flex items-center"
+                      >
+                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                          <img src="" alt="" />
+                        </span>
+                      </Link>
                     </div>
                     <div>
                       <button
@@ -166,7 +161,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          to="/instractors"
+                          to="/blog"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -176,25 +171,33 @@ const Header = () => {
                       </li>
                       <li>
                             <Link
-                              to="/classes"
+                              to="/myToys"
                               aria-label="About us"
                               title="About us"
                               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                          Classes
                             </Link>
                           </li>
                       {user?.email ? (
                         <>
                           <li>
                             <Link
-                              to="/dashboard"
+                              to="/allToys"
                               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                             DashBoard
+                              Classes
                             </Link>
                           </li>
-                         
+                          <li>
+                            <Link
+                              to="/addToys"
+                              aria-label="About us"
+                              title="About us"
+                              className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                            >
+                            Add Toys
+                            </Link>
+                          </li>
                         </>
                       ) : (
                         <></>

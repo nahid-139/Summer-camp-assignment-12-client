@@ -1,145 +1,154 @@
-import {
-    GoogleAuthProvider,
-    signInWithPopup,
-  } from "firebase/auth";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext, auth } from "../../Context/UseContext";
+import { AuthContext } from "../../Context/UseContext";
 import Swal from "sweetalert2";
-import { Helmet } from "react-helmet-async";
-  const Login = () => {
-    const [showPassword, setShowPassword] = useState(false);
-    const { signIn } = useContext(AuthContext);
- 
-    const googleProvider = new GoogleAuthProvider();
-    const navigate=useNavigate()
-    const loaction= useLocation()
-  
-  
 
-  const froms= loaction.state?.from?.pathname || '/';
-  
-  
+const Login = () => {
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      const from = event.target;
-      const email = from.email.value;
-      const password = from.password.value;
-      console.log(email, password);
-      signIn(email, password)
-        .then((result) => {
-          const user = result.user;
-          console.log(user);
-          from.reset()
-          navigate(froms,{replace:true})
-          Swal.fire(
-            'Good job!',
-            'You are LogIn !',
-            'success'
-          )
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-  
-    const signInGoogle = () => {
-      signInWithPopup(auth, googleProvider)
-        .then((result) => {
-          const user = result.user;
-          console.log(user);
-          Swal.fire(
-            'Good job!',
-            'You are LogIn !',
-            'success'
-          )
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
+  const { signIn, signInWithGoogle,} = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const [userEmail, setUserEmail] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-    const togglePasswordVisibility = () => {
-      setShowPassword(!showPassword);
-    };
-    return (
-      <div className="lg:flex sm:flex-col py-20 lg:flex-row justify-evenly">
-         <Helmet>
-                <title>LinGo | LogIn</title>
-            </Helmet>
-        <div className="lg:w-1/2 max-w-md p-8 space-y-3 rounded-xl shadow-xl  dark:text-gray-900">
-          <h1 className="text-2xl font-bold text-center py-2">Login</h1>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6 ng-untouched ng-pristine ng-valid"
-          >
-            <div className="space-y-1 text-sm">
-              <label for="username" className="block text-xl dark:text-gray-400">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter Your Email"
-                className="w-full px-4 text-lg py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
-                required
-              />
-            </div>
-            <div className="space-y-1 text-sm">
-              <label for="password" className="block text-xl dark:text-gray-400">
-                Password
-              </label>
-              <input
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                id="password"
-                placeholder="Password"
-                className="w-full text-lg px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
-                required
-              />
-              <button type="button" onClick={togglePasswordVisibility}>
-          {showPassword ? 'Hide Password' : 'Show Password'}
-        </button>
-              <div className="flex justify-end text-lg dark:text-gray-400">
-                <button>Forgot Password?</button>
-              </div>
-            </div>
-            <button className="block w-full p-3 text-center rounded-sm text-white bg-slate-500">
-              Sign in
-            </button>
-          </form>
-          <div className="text-center">
-            <div className=" sm:w-16 dark:bg-gray-700"></div>
-            <p className="px-3 text-lg dark:text-gray-400">
-              Login with social accounts
-            </p>
+  
+  const handleLoginSubmit = (data) => {
+    console.log(data);
+    signIn(data.email, data.password)
+      .then((result) => {
+        const users = result.user;
+        console.log(users);
+        Swal.fire(
+          'Good job!',
+          'You clicked the button!',
+          'success'
+        )
+        
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.log(error));
+  };
+
+  // goole sign in
+  const googleSignIn = () => {
+    signInWithGoogle()
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+
+
+
+  return (
+    <div className="lg:flex justify-center container mx-auto">
+        <div className="mt-6">
+            <img src='' alt="" />
+        </div>
+      <div className="lg:w-2/6  bg-gray-100 p-10 rounded shadow-lg my-10 mx-auto">
+        <div className="mb-8 text-center">
+          <h1 className="my-3 text-4xl font-bold">Sign in</h1>
+          <p className="text-sm  text-gray-900">
+            Sign in to access your account
+          </p>
+        </div>
+        <form onSubmit={handleSubmit(handleLoginSubmit)}>
+          <div className="mb-1 sm:mb-2">
+            <label
+              htmlFor="email"
+              className="inline-block mb-1 text-lg font-medium"
+            >
+              E-mail
+            </label>
+            <input
+              placeholder="Your Email Address"
+              type="email"
+              onBlur={(event) => setUserEmail(event.target.value)}
+              {...register("email", { required: "Email Address is required" })}
+              className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+            />
+            {errors.email && (
+              <p className="text-red-400">{errors.email?.message}</p>
+            )}
+          </div>
+          <div className="mb-1 sm:mb-2">
+            <label
+              htmlFor="password"
+              className="inline-block text-lg mb-1 font-medium"
+            >
+              Password
+            </label>
+            <input
+              placeholder="Enter Your Password"
+              type="password"
+              {...register("password", {
+                required: "password is Required",
+                minLength: {
+                  value: 6,
+                  message: "password must be 6 Characters longer",
+                },
+              })}
+              className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+            />
+            {errors.password && (
+              <p className="text-red-400">{errors.password?.message}</p>
+            )}
           </div>
           <div>
             <button
-              onClick={signInGoogle}
-              className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1  text-white   bg-slate-600 focus:ring-violet-400"
+              className="mt-0 pt-0 hover:underline"
             >
-              <span className=" text-2xl">
-                <FaGoogle></FaGoogle>
-              </span>
-              <p>Login with Google</p>
+              Forgot Password ?
             </button>
           </div>
-          <p className="text-lg text-center sm:px-6 dark:text-gray-400">
-            Don't have an account?
-            <Link to="/signup" className="underline dark:text-gray-900">
-              Register
+          <div className="mt-4 mb-2 sm:mb-4">
+            <button
+              type="submit"
+              className="inline-flex mt-4 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md uppercase  bg-blue-600 focus:shadow-outline focus:outline-none"
+            >
+              Login
+            </button>
+          </div>
+          <p className="text-xs text-black sm:text-sm">
+            New to Doctors Portal?{" "}
+            <Link
+              className=" text-blue-500 font-medium underline"
+              to="/signup"
+            >
+              Create new account
             </Link>
           </p>
-        </div>
-        <div className="">
-        <img src='https://media.tenor.com/p0G_bmA2vSYAAAAd/login.gif'alt="" />
+        </form>
+        <p className="px-3  font-medium text-lg text-center py-6 dark:text-gray-400">
+          Login with social accounts
+        </p>
+        <div>
+          <button
+           onClick={googleSignIn}
+            type="button"
+            className="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
+          >
+            <span className="text-2xl text-white ">
+              <FaGoogle></FaGoogle>
+            </span>
+
+            <span className="hidden mx-2 sm:inline">Sign in with Google</span>
+          </button>
         </div>
       </div>
-    );
-  };
-  
-  export default Login;
-  
+    </div>
+  );
+};
+
+export default Login;
