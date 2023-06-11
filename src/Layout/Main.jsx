@@ -4,7 +4,7 @@ import Header from '../Components/Header/Header';
 
 const Main = () => {
     return (
-        <div>
+        <div className='bg-white text-black'>
             <Header></Header>
             <Outlet></Outlet>
         </div>

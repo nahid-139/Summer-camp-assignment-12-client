@@ -23,6 +23,7 @@ import {
 } from '@tanstack/react-query'
 import DashBoard from './Layout/DashBoard/DashBoard.jsx';
 import Myclasses from './Components/Pages/Myclasses/Myclasses.jsx'
+import PrivateRoute from './Layout/PrivateRoute.jsx';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element:<DashBoard></DashBoard>,
+    element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
       {
         path: '/dashboard/myclasses',

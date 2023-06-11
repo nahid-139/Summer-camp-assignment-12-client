@@ -139,15 +139,7 @@ const Header = () => {
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <Link
-                        to="/"
-                        title="FoodFly"
-                        className="inline-flex items-center"
-                      >
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          <img src="" alt="" />
-                        </span>
-                      </Link>
+                      
                     </div>
                     <div>
                       <button
@@ -174,44 +166,35 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          to="/blog"
+                          to="/instractors"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Blog
+                         Instractors
                         </Link>
                       </li>
                       <li>
                             <Link
-                              to="/myToys"
+                              to="/classes"
                               aria-label="About us"
                               title="About us"
                               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                            My Toys
+                          Classes
                             </Link>
                           </li>
                       {user?.email ? (
                         <>
                           <li>
                             <Link
-                              to="/allToys"
+                              to="/dashboard"
                               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                              All Toys
+                             DashBoard
                             </Link>
                           </li>
-                          <li>
-                            <Link
-                              to="/addToys"
-                              aria-label="About us"
-                              title="About us"
-                              className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                            Add Toys
-                            </Link>
-                          </li>
+                         
                         </>
                       ) : (
                         <></>
