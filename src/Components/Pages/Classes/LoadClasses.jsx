@@ -11,21 +11,21 @@ const LoadClasses = ({ item }) => {
     const navigate = useNavigate();
 
 
-    const handleAddToCart = item => {
+    const handleAddToMyClass = item => {
         console.log(item);
         if (user && user.email) {
-            const cartItem = { classItemId: _id, name, price, availableSeats, email: user.email }
+            const classItem = { classItemId: _id, name, price, availableSeats, email: user.email }
             fetch('http://localhost:5000/class', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(cartItem)
+                body: JSON.stringify(classItem)
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-                        refetch();  //  refetch cart to update the number of items in the cart
+                        refetch(); 
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -58,14 +58,14 @@ const LoadClasses = ({ item }) => {
             {availableSeats === 0 ? (<div className='bg-rose-800'>
                 <h1>name is{name}</h1>
                 <h1>Aviaable Seats {availableSeats}</h1>
-                <button onClick={() => handleAddToCart(item)}
+                <button onClick={() => handleAddToMyClass(item)}
                     disabled={availableSeats === 0}
                     className='bg-slate-700 text-white px-6 py-2 mt-4'>
                     Select Course</button>
             </div>) : (<div className=''>
                 <h1>name is{name}</h1>
                 <h1>Aviaable Seats {availableSeats}</h1>
-                <button onClick={() => handleAddToCart(item)}
+                <button onClick={() => handleAddToMyClass(item)}
                     disabled={availableSeats === 0}
                     className='bg-slate-700 text-white px-6 py-2 mt-4'>
                     Select Course</button>
