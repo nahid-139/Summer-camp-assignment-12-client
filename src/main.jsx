@@ -13,7 +13,6 @@ import UseContext from './Components/Context/UseContext.jsx';
 import Register from './Components/Pages/Register/Register.jsx';
 import Classes from './Components/Pages/Classes/Classes.jsx';
 import Instractors from './Components/Pages/Instractors/Instractors.jsx';
-import DashBoard from './Components/Pages/DashBoard/DashBoard.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import {
   useQuery,
@@ -22,6 +21,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import DashBoard from './Layout/DashBoard/DashBoard.jsx';
+import Myclasses from './Components/Pages/Myclasses/Myclasses.jsx'
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -51,13 +52,19 @@ const router = createBrowserRouter([
         element: <Instractors></Instractors>
       },
      
-      {
-        path: '/dashboard',
-        element:<DashBoard></DashBoard>
-      },
-     
     ]
-  }
+  },
+  {
+    path: '/dashboard',
+    element:<DashBoard></DashBoard>,
+    children: [
+      {
+        path: '/dashboard/myclasses',
+        element: <Myclasses></Myclasses>
+
+      }
+    ]
+  },
 ]);
 
 
