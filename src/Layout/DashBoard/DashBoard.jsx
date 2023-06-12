@@ -65,9 +65,14 @@ const DashBoard = () => {
                     <li><Link>Payment</Link></li></>
                         }
                          {  user && users[0]?.role === "instractor" &&(
-                            <><li>
+                            <>
+                            <li>
                             <NavLink to='/dashboard/addclasses'>Add Class</NavLink >
-                            </li></>
+                            </li>
+                            <li>
+                            <NavLink to='/dashboard/insmyclass'>Instractor Class</NavLink >
+                            </li>
+                            </>
                          )}
                          {  user && users[0]?.role === "admin" &&(
                             <><li>
