@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../Components/Context/UseContext';
@@ -6,7 +6,29 @@ import { FaUser } from 'react-icons/fa';
 
 
 const DashBoard = () => {
+
+
+
+
+    const [users,setUsers]=useState([])
     const {user} = useContext(AuthContext)
+
+ useEffect(() => {
+  fetch("http://localhost:5000/users")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const checkUser = data.filter((chkUser) => {
+        return chkUser.email === user?.email;
+      });
+      setUsers(checkUser);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+}, [user]);
+    
 
     return (
 
@@ -36,9 +58,24 @@ const DashBoard = () => {
 				<a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">View profile</a>
 			</span>
 		</div>
-	</div>
-                        <li><NavLink to='/dashboard/myclasses'>My classes</NavLink ></li>
-                        <li><Link>Payment</Link></li>
+	</div>              { user && users[0]?.role === "user" &&
+                        <><li>
+                        <NavLink to='/dashboard/myclasses'>My classes</NavLink >
+                        </li>
+                    <li><Link>Payment</Link></li></>
+                        }
+                         {  user && users[0]?.role === "instractor" &&(
+                            <><li>
+                            <NavLink to='/dashboard/addclasses'>Add Class</NavLink >
+                            </li></>
+                         )}
+                         {  user && users[0]?.role === "admin" &&(
+                            <><li>
+                            <NavLink to='/dashboard/allusers'>All Users</NavLink >
+                            </li></>
+                         )}
+                        
+                        
                         <hr className='mt-10'/>
                       <div className='mt-10'>
                            <li ><Link to='/'>Home</Link></li>

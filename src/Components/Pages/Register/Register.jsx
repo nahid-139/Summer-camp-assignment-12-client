@@ -401,7 +401,7 @@ const Register = () => {
             })}
               className="select select-bordered w-full">
               <option value="user">User</option>
-              <option value="seller">Seller</option>
+              <option value="instractor">Instractor</option>
             </select>
           </div>
           <div className="mb-1 sm:mb-2">

@@ -24,6 +24,8 @@ import {
 import DashBoard from './Layout/DashBoard/DashBoard.jsx';
 import Myclasses from './Components/Pages/Myclasses/Myclasses.jsx'
 import PrivateRoute from './Layout/PrivateRoute.jsx';
+import AddClass from './Components/Pages/AddClass/AddClass.jsx';
+import AllUsers from './Components/Pages/AllUsers/AllUsers.jsx';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -62,6 +64,16 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myclasses',
         element: <Myclasses></Myclasses>
+
+      },
+      {
+        path: '/dashboard/addclasses',
+        element: <AddClass></AddClass>
+
+      },
+      {
+        path: '/dashboard/allusers',
+        element: <AllUsers></AllUsers>
 
       }
     ]

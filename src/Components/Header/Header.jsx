@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegMinusSquare, FaUser } from "react-icons/fa";
 
@@ -12,14 +12,34 @@ const Header = () => {
   const handleLogout = () => {
     logOut()
       .then(() => {
-        
+
       })
       .catch((error) => {
         console.error(error);
       });
   };
-    return (
-      <div className="bg-slate-500">
+
+
+  const [users, setUsers] = useState([])
+
+
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        const checkUser = data.filter((chkUser) => {
+          return chkUser.email === user?.email;
+        });
+        setUsers(checkUser);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [user]);
+  return (
+    <div className="bg-slate-500">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  shadow-lg md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/" title="Toy Hunter" className="inline-flex items-center w-20 ">
@@ -51,15 +71,43 @@ const Header = () => {
                 Classes
               </Link>
             </li>
-           
-            <li>
-                  <Link
-                    to="/dashboard/myclasses"
-                    className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-                  >
-                   Dashboard
-                  </Link>
-                </li>
+            {user?.role === "instractor" ? (<><li>
+              <Link
+                to="/dashboard/addclasses"
+                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Dashboard
+              </Link>
+            </li>
+            </>):(<><Link
+              to="/dashboard/myclasses"
+              className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+            >
+              Dashboard
+            </Link></>)}
+            {/* {user && users[0]?.role === "instractor" && (<>
+              <li>
+                <Link
+                  to="/dashboard/addclasses"
+                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                >
+                  Dashboard
+                </Link>
+              </li>
+
+            </>)} */}
+            {user?.role === "admin" ? (<><Link
+              to="/dashboard/allusers"
+              className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+            >
+              Dashboard
+            </Link></>):(<><Link
+              to="/dashboard/myclasses"
+              className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+            >
+              Dashboard
+            </Link></>)}
+
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             {user?.uid ? (
@@ -93,20 +141,20 @@ const Header = () => {
             {user?.email ? (
               <>
                 {user?.email ? (
-              <>
-                <img
-                  className=" rounded-full  w-16"
-                  src={user?.photoURL}
-                  alt=""
-                />
-              </>
-            ) : (
-              <>
-                <span>
-                  <FaUser></FaUser>
-                </span>
-              </>
-            )}
+                  <>
+                    <img
+                      className=" rounded-full  w-16"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </>
+                ) : (
+                  <>
+                    <span>
+                      <FaUser></FaUser>
+                    </span>
+                  </>
+                )}
               </>
             ) : (
               <></>
@@ -166,18 +214,18 @@ const Header = () => {
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                         Instractors
+                          Instractors
                         </Link>
                       </li>
                       <li>
-                            <Link
-                              to="/myToys"
-                              aria-label="About us"
-                              title="About us"
-                              className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                            </Link>
-                          </li>
+                        <Link
+                          to="/myToys"
+                          aria-label="About us"
+                          title="About us"
+                          className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                        >
+                        </Link>
+                      </li>
                       {user?.email ? (
                         <>
                           <li>
@@ -195,7 +243,7 @@ const Header = () => {
                               title="About us"
                               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                            Add Toys
+                              Add Toys
                             </Link>
                           </li>
                         </>
@@ -230,7 +278,7 @@ const Header = () => {
                           </li>
                         </>
                       )}
-                      {user?.photoURL?<img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" />:<span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
+                      {user?.photoURL ? <img className='w-12 rounded-full' title={user?.displayName} src={user?.photoURL} alt="" /> : <span className='text-white text-xl w-10 h-10 bg-zinc-500 flex justify-center rounded-full items-center'><FaUser></FaUser></span>
                       }
                     </ul>
                   </nav>
@@ -241,7 +289,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Header;
