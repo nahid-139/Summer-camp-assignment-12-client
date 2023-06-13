@@ -39,7 +39,7 @@ const Header = () => {
       });
   }, [user]);
   return (
-    <div className="bg-slate-500">
+    <div className="bg-slate-300">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  shadow-lg md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/" title="Toy Hunter" className="inline-flex items-center w-20 ">

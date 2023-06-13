@@ -2,108 +2,129 @@
   {
     "_id": "1",
     "name": "French Beginner",
+    "image_url": "https://www.fluentfastacademy.com/wp-content/uploads/2022/11/French-Course-Online-For-Beginners-With-Certificate.jpg",
     "category": "popular",
+    "language": "French",
     "instructor": {
       "name": "Sophie Martin",
-      "image": "https://example.com/images/sophie_martin.jpg",
+      "image": "https://www.mills-reeve.com/getmedia/9340acc5-adaf-43d6-92c6-28c005742144/sophie-martin?width=400&height=400&ext=.jpg",
       "email": "sophie@example.com",
       "bio": "Sophie Martin is a certified French language instructor with over 10 years of teaching experience."
     },
     "availableSeats": 33,
-    "price": 200
+    "price": 200,
+    "description": "This class is perfect for those who have little to no knowledge of the French language. "
   },
   {
     "_id": "2",
     "name": "Spanish Intermediate",
+    "image_url":"https://m.media-amazon.com/images/I/51+IiAdGfgL._AC_UF1000,1000_QL80_.jpg",
     "category": "popular",
+    "language": "Spanish",
     "instructor": {
       "name": "Carlos Gomez",
-      "image": "https://example.com/images/carlos_gomez.jpg",
+      "image": "https://www.fexdir.com/wp-content/uploads/2021/08/CarlosGomezSuarez.jpg",
       "email": "carlos@example.com",
       "bio": "Carlos Gomez is a native Spanish speaker and experienced language instructor."
     },
     "availableSeats": 5,
-    "price": 250
+    "price": 250,
+    "description": "If you already have a foundation in Spanish and want to take your language skills to the next level, this class is for you."
   },
   {
     "_id": "3",
     "name": "German Advanced",
+    "image_url":"https://m.media-amazon.com/images/I/51G8FB7FHEL._AC_UF894,1000_QL80_.jpg",
     "category": "popular",
+    "language": "German",
     "instructor": {
       "name": "Lena Fischer",
-      "image": "https://example.com/images/lena_fischer.jpg",
+      "image": "https://media.licdn.com/dms/image/C4E03AQG8owjQTWFwOw/profile-displayphoto-shrink_800_800/0/1659456312782?e=2147483647&v=beta&t=7h2rldqr6cGtZimsROf4uGAeGZ0nD7S7C7tKmgfXP9U",
       "email": "lena@example.com",
       "bio": "Lena Fischer is a certified German language instructor and a native German speaker."
     },
     "availableSeats": 8,
-    "price": 300
+    "price": 300,
+    "description": "Are you looking to master the German language and achieve fluency? This advanced-level class led by Lena Fischer,."
   },
   {
     "_id": "4",
     "name": "Italian Conversation",
+    "image_url":"https://m.media-amazon.com/images/I/61jM+PJT7HL._SL500_.jpg",
     "category": "popular",
+    "language": "Italian",
     "instructor": {
       "name": "Giulia Rossi",
-      "image": "https://example.com/images/giulia_rossi.jpg",
+      "image": "https://nyuad.nyu.edu/en/academics/divisions/science/instructors/giulia-rossi/_jcr_content/bio-info/image.img.jpg",
       "email": "giulia@example.com",
       "bio": "Giulia Rossi is a passionate Italian language teacher with a focus on conversational skills."
     },
     "availableSeats": 0,
-    "price": 180
+    "price": 180,
+    "description": "Join Giulia Rossi, a passionate Italian language teacher, for an immersive conversation-focused class. "
   },
   {
     "_id": "5",
     "name": "Mandarin Chinese for Business",
+    "image_url":"https://britishinstitute.pk/wp-content/uploads/2022/09/9280a8ee-dcfb-4014-bba7-465bbbd971ef-1024x998.jpg",
     "category": "popular",
+    "language": "Mandarin Chinese",
     "instructor": {
       "name": "Li Wei",
-      "image": "https://example.com/images/li_wei.jpg",
+      "image": "https://c.superprof.com/i/t/981939/91136/600/20230424194418/speak-perfect-mandarin-without-accent-don-shy-just-try-want-you.jpg",
       "email": "liwei@example.com",
       "bio": "Li Wei is a professional Mandarin Chinese instructor with expertise in business communication."
     },
     "availableSeats": 15,
-    "price": 220
+    "price": 220,
+    "description": "If you're interested in conducting business in China or with Mandarin-speaking counterparts, this class is tailored to your needs."
   },
   {
     "_id": "6",
     "name": "Japanese Beginner",
+    "image_url":"https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1590627258i/53530491.jpg",
     "category": "popular",
     "language": "Japanese",
     "instructor": {
       "name": "Yuki Nakamura",
-      "image": "https://example.com/images/yuki_nakamura.jpg",
+      "image": "https://media.licdn.com/dms/image/D5603AQHrPnZlBE2H7w/profile-displayphoto-shrink_800_800/0/1635333030786?e=2147483647&v=beta&t=x_8GJo9Ha3izhcOA5-YI5BOWxrq8KFhqQLPy5O5D17c",
       "email": "yuki@example.com",
       "bio": "Yuki Nakamura is a native Japanese speaker and experienced language teacher."
     },
     "availableSeats": 10,
-    "price": 230
+    "price": 230,
+    "description": "Embark on your journey to learn Japanese with Yuki Nakamura, a native Japanese speaker and experienced language teacher. "
   },
   {
     "_id": "7",
     "name": "Portuguese for Travel",
-    "category": " Portugal",
+    "image_url":"https://m.media-amazon.com/images/I/51zRydwotgL._SL500_.jpg",
+    "category": "Portugal",
     "language": "Portuguese",
     "instructor": {
       "name": "Isabella Santos",
-      "image": "https://example.com/images/isabella_santos.jpg",
+      "image": "https://media.licdn.com/dms/image/D4E03AQEfTWTbj8-OCQ/profile-displayphoto-shrink_800_800/0/1683734984113?e=2147483647&v=beta&t=cf9qbHnLSt8cOQf0m4azaYNqtqgOkZgMBqqVS7p2a28",
       "email": "isabella@example.com",
       "bio": "Isabella Santos is an enthusiastic Portuguese language instructor specializing in travel-related language skills."
     },
     "availableSeats": 7,
-    "price": 190
+    "price": 190,
+    "description": "Planning a trip to Portugal or a Portuguese-speaking country? Join Isabella Santos, an enthusiastic Portuguese."
   },
   {
     "_id": "8",
     "name": "Russian Intermediate",
+    "image_url":"https://abbeys-product-images.s3.ap-southeast-2.amazonaws.com/original/978/078/181/9780781814409.jpg",
     "category": "Russian",
     "language": "Russian",
     "instructor": {
       "name": "Dmitri Ivanov",
-      "image": "https://example.com/images/dmitri_ivanov.jpg",
+      "image": "https://pacificimplantacademy.com/wp-content/uploads/2020/01/dmitriy_long1.jpg",
       "email": "dmitri@example.com",
       "bio": "Dmitri Ivanov is a native Russian speaker and experienced language instructor offering intermediate-level classes."
     },
     "availableSeats": 6,
-    "price": 260
+    "price": 260,
+    "description": "Take your Russian language skills to the next level with Dmitri Ivanov, a native Russian speaker and experienced language instructor. ="
   }
 ]
