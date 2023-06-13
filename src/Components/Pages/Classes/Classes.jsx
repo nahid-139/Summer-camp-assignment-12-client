@@ -18,14 +18,14 @@ const Classes = () => {
 
 
     return (
-        <div>
+        <div className='bg-blue-400 pt-20 pb-20'>
              <Helmet>
                 <title>LinGo | Classes</title>
             </Helmet>
 
-            <h1 className='text-center font-bold text-2xl mt-10 mb-4'>Hi Welcome Our classes.</h1>
+            <h1 className='text-center text-slate-900 font-bold text-4xl underline mb-20'>Hi Welcome Our classes.</h1>
 
-            <div className='grid grid-cols-2 text-center'>
+            <div className='grid grid-cols-2 gap-6 justify-items-center'>
             {
                 classes.map(item =>
                 <LoadClasses
