@@ -92,27 +92,3 @@ export default LoadClasses;
 
 
 
-{/* <button onClick={() => handleAddToMyClass(item)}
-                    disabled={availableSeats === 0}
-                    className='bg-slate-700 text-white px-6 py-2 mt-4'>
-                    Select Course</button> */}
-
-
-
-    //     <div className=' border border-lime-200 mx-6 my-6'>
-    //     {availableSeats === 0 ? (<div className='bg-rose-800'>
-    //         <h1>name is{name}</h1>
-    //         <h1>Aviaable Seats {availableSeats}</h1>
-    //         <button onClick={() => handleAddToMyClass(item)}
-    //             disabled={availableSeats === 0}
-    //             className='bg-slate-700 text-white px-6 py-2 mt-4'>
-    //             Select Course</button>
-    //     </div>) : (<div className=''>
-    //         <h1>name is{name}</h1>
-    //         <h1>Aviaable Seats {availableSeats}</h1>
-    //         <button onClick={() => handleAddToMyClass(item)}
-    //             disabled={availableSeats === 0}
-    //             className='bg-slate-700 text-white px-6 py-2 mt-4'>
-    //             Select Course</button>
-    //     </div>)}
-    // </div>

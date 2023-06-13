@@ -26,7 +26,7 @@ const PopularInstractor = () => {
                         <div className="card-body">
                             <h2 className="card-title">
                                 {item.instructor.name}
-                                <div className="badge badge-secondary">NEW</div>
+                               
                             </h2>
                             <p className='text-slate-500 text-start'>{item.instructor.bio}</p>
                             <div className=" mt-4">

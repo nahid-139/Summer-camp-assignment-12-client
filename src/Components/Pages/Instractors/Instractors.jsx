@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Instractors = () => {
 
@@ -20,13 +21,28 @@ const Instractors = () => {
 
             <div className ='grid grid-cols-2 mt-10 text-center mx-20'>
             {
-                instractors.map(item =><div className='border border-red-700 mx-6 my-6'
+                instractors.map(item =><div className=' mx-6 my-6'
                 key={item._id}
                 
                 >   
-                     <img src="" alt="" />
-                     <h1 className='mt-6'>name is{item.instructor.name}</h1>
-                     <h1 className='mt-2'>{item.instructor.email}</h1>
+                    <div className="card w-96 bg-slate-300 shadow-xl text-black">
+                        <figure><img src={item.instructor.image} alt="" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">
+                                {item.instructor.name}
+                             
+                            </h2>
+                            <p className='text-slate-500 text-start'>{item.instructor.bio}</p>
+                            <div className=" mt-4">
+                                <div className=" bg-slate-300 text-black text-start "> <span className='font-bold '>Email: </span>{item.instructor.email}</div>
+                            </div>
+                            <div className='flex gap-4'>
+                                <FaFacebook></FaFacebook>
+                                <FaTwitter></FaTwitter>
+                               <FaLinkedin></FaLinkedin>
+                            </div>
+                        </div>
+                    </div>
             
 
 
