@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 import Swal from "sweetalert2";
@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 const Login = () => {
 
   const { signIn, signInWithGoogle,} = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -49,7 +50,10 @@ const Login = () => {
   };
 
 
-
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
 
   return (
     <div className="lg:flex justify-center container mx-auto">
@@ -91,7 +95,7 @@ const Login = () => {
             </label>
             <input
               placeholder="Enter Your Password"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               {...register("password", {
                 required: "password is Required",
                 minLength: {
@@ -104,6 +108,17 @@ const Login = () => {
             {errors.password && (
               <p className="text-red-400">{errors.password?.message}</p>
             )}
+            <button type="button" onClick={togglePasswordVisibility}>
+              {showPassword ? 
+              <div className="flex gap-2">
+                <p><FaEyeSlash></FaEyeSlash></p>
+              <p className="text-sm">Hide Password</p>
+              </div>
+               :<div className="flex gap-2">
+                <FaEye></FaEye>
+                <p className="text-sm">Show Password</p>
+                </div>}
+            </button>
           </div>
           <div>
             <button

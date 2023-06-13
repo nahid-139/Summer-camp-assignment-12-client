@@ -11,8 +11,6 @@ const Home = () => {
            <Helmet>
                 <title>LinGo | Home</title>
             </Helmet>
-
-
           <Banner></Banner> 
           <PopularClasses></PopularClasses>
           <PopularInstractor></PopularInstractor>

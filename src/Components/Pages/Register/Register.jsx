@@ -225,7 +225,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../Context/UseContext";
@@ -399,7 +399,7 @@ const Register = () => {
             <select  {...register("role", {
               required: true,
             })}
-              className="select select-bordered w-full">
+              className="select select-bordered w-full text-white">
               <option value="user">User</option>
               <option value="instractor">Instractor</option>
             </select>
@@ -435,7 +435,15 @@ const Register = () => {
             )}
 
             <button type="button" onClick={togglePasswordVisibility}>
-              {showPassword ? 'Hide Password' : 'Show Password'}
+            {showPassword ? 
+              <div className="flex gap-2">
+                <p><FaEyeSlash></FaEyeSlash></p>
+              <p className="text-sm">Hide Password</p>
+              </div>
+               :<div className="flex gap-2">
+                <FaEye></FaEye>
+                <p className="text-sm">Show Password</p>
+                </div>}
             </button>
           </div>
 
@@ -464,7 +472,15 @@ const Register = () => {
              
 
             <button type="button" onClick={toggleConfirmPasswordVisibility}>
-              {showConfirmPassword ? 'Hide Password' : 'Show Password'}
+            {showConfirmPassword ? 
+              <div className="flex gap-2">
+                <p><FaEyeSlash></FaEyeSlash></p>
+              <p className="text-sm">Hide Password</p>
+              </div>
+               :<div className="flex gap-2">
+                <FaEye></FaEye>
+                <p className="text-sm">Show Password</p>
+                </div>}
             </button>
           </div>
 
