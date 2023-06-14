@@ -5,7 +5,7 @@ const PopularClasses = () => {
 
     const [classes, setClasses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allData')
+        fetch('https://summer-school-server-nahid-139.vercel.app/allData')
             .then(res => res.json())
             .then(data => {
                 setClasses(data.filter(item => item.category === 'popular'))

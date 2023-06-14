@@ -28,6 +28,7 @@ import AddClass from './Components/Pages/AddClass/AddClass.jsx';
 import AllUsers from './Components/Pages/AllUsers/AllUsers.jsx';
 import InsMyClass from './Components/Pages/InsMyClass/InsMyClass.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
+import ManagClass from './Components/Pages/ManageClass/ManagClass.jsx';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -83,6 +84,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/insmyclass',
         element: <InsMyClass></InsMyClass>
+
+      },
+      {
+        path: '/dashboard/manageclass',
+        element: <ManagClass></ManagClass>
 
       }
     ]

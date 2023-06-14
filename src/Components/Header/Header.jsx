@@ -24,7 +24,7 @@ const Header = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://summer-school-server-nahid-139.vercel.app/users")
       .then((res) => {
         return res.json();
       })
@@ -71,42 +71,26 @@ const Header = () => {
                 Classes
               </Link>
             </li>
-            {user?.role === "instractor" ? (<><li>
-              <Link
-                to="/dashboard/addclasses"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Dashboard
-              </Link>
-            </li>
-            </>):(<><Link
+
+
+            { user && users[0]?.role === "user" &&<><Link
               to="/dashboard/myclasses"
               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
             >
               Dashboard
-            </Link></>)}
-            {/* {user && users[0]?.role === "instractor" && (<>
-              <li>
-                <Link
-                  to="/dashboard/addclasses"
-                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Dashboard
-                </Link>
-              </li>
-
-            </>)} */}
-            {user?.role === "admin" ? (<><Link
+            </Link></>}
+            { user && users[0]?.role === "admin" &&<><Link
               to="/dashboard/allusers"
               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
             >
               Dashboard
-            </Link></>):(<><Link
-              to="/dashboard/myclasses"
+            </Link></>}
+            { user && users[0]?.role === "instractor" &&<><Link
+              to="/dashboard/addclasses"
               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
             >
               Dashboard
-            </Link></>)}
+            </Link></>}
 
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">

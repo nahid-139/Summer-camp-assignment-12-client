@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/UseContext";
+import { Helmet } from "react-helmet-async";
 
 
 const AddClass = () => {
@@ -17,7 +18,7 @@ const AddClass = () => {
     console.log(name, img, price, avialable);
 
 
-    fetch("http://localhost:5000/addclass", {
+    fetch("https://summer-school-server-nahid-139.vercel.app/addclass", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,6 +48,9 @@ const AddClass = () => {
   };
   return (
     <div className="my-30 w-full ">
+      <Helmet>
+                <title>LinGo | Add Classes</title>
+            </Helmet>
       <form
         onSubmit={handleAddToy}
         className=" bg-slate-400 my-10 lg:w-2/3 mx-auto p-10"

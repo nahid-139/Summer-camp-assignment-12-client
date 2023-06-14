@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../Components/Context/UseContext';
-import { FaUser } from 'react-icons/fa';
+import { FaAddressCard, FaBook, FaBookOpen, FaDollarSign, FaHome, FaUser, FaUserAlt, FaUsers } from 'react-icons/fa';
 
 
 const DashBoard = () => {
@@ -14,7 +14,7 @@ const DashBoard = () => {
     const {user} = useContext(AuthContext)
 
  useEffect(() => {
-  fetch("http://localhost:5000/users")
+  fetch("https://summer-school-server-nahid-139.vercel.app/users")
     .then((res) => {
       return res.json();
     })
@@ -48,7 +48,14 @@ const DashBoard = () => {
                 <div className="drawer-side ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full  text-base-content bg-slate-600 font-bold ">
+                    { user && users[0]?.role === "user" &&<><h1 className='text-center text-2xl text-gray-300'>DashBoard Home</h1></>}
+                    { user && users[0]?.role === "admin" &&<><h1 className='text-center text-2xl text-gray-300'>Admin Home</h1></>}
+                    { user && users[0]?.role === "instractor" &&<><h1 className='text-center text-2xl text-gray-300'>Instructor Home</h1></>}
+                   
+
+                    <hr />
                     <div className="flex items-center p-2 space-x-4">
+                       
 		{
             user.photoURL ? (<img src={user.photoURL} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />):(<FaUser></FaUser>)
         }
@@ -59,33 +66,45 @@ const DashBoard = () => {
 			</span>
 		</div>
 	</div>              { user && users[0]?.role === "user" &&
-                        <><li>
-                        <NavLink to='/dashboard/myclasses'>My classes</NavLink >
+                        <>
+                        
+                        
+                        <li>
+                            <div><FaBookOpen></FaBookOpen>
+                        <NavLink to='/dashboard/myclasses'>My classes</NavLink ></div>
                         </li>
-                    <li><Link>Payment</Link></li></>
+                    <li>
+                        <div><FaDollarSign></FaDollarSign><Link>Payment</Link></div></li></>
                         }
                          {  user && users[0]?.role === "instractor" &&(
                             <>
                             <li>
-                            <NavLink to='/dashboard/addclasses'>Add Class</NavLink >
+                             <div>   <FaAddressCard></FaAddressCard>
+                            <NavLink to='/dashboard/addclasses'>Add Class</NavLink ></div>
                             </li>
                             <li>
-                            <NavLink to='/dashboard/insmyclass'>Instractor Class</NavLink >
+                                <div><FaBookOpen></FaBookOpen>
+                            <NavLink to='/dashboard/insmyclass'>Instractor Class</NavLink ></div>
                             </li>
                             </>
                          )}
                          {  user && users[0]?.role === "admin" &&(
                             <><li>
+                                <div>
+                                <FaUsers></FaUsers>
                             <NavLink to='/dashboard/allusers'>All Users</NavLink >
-                            </li></>
+                                </div>
+                            </li>
+                            <li><div>
+                            <FaBookOpen></FaBookOpen><NavLink to="/dashboard/manageclass">Manage Class</NavLink></div></li></>
                          )}
                         
                         
                         <hr className='mt-10'/>
                       <div className='mt-10'>
-                           <li ><Link to='/'>Home</Link></li>
-                        <li ><Link to='/classes'>Classes</Link></li>
-                        <li><Link to='/instractors'>Instractors</Link></li>
+                           <li ><div><FaHome></FaHome><Link to='/'>Home</Link></div></li>
+                        <li ><div><FaBook></FaBook><Link to='/classes'>Classes</Link></div></li>
+                        <li><div><FaUserAlt></FaUserAlt><Link to='/instractors'>Instractors</Link></div></li>
                         </div>
                         
                     </ul>

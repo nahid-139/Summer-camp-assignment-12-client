@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
-import { FaCheckCircle, FaUserShield } from "react-icons/fa";
+import {  FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const AllUser = () => {
@@ -10,7 +11,7 @@ const AllUser = () => {
   const { data = [], refetch } = useQuery({
     queryKey: ["use"],
     queryFn: () => {
-      fetch("http://localhost:5000/users")
+      fetch("https://summer-school-server-nahid-139.vercel.app/users")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -26,7 +27,7 @@ const AllUser = () => {
 
   // handlemake Admin
   const handleMakeAdmin = id => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://summer-school-server-nahid-139.vercel.app/users/admin/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -49,7 +50,7 @@ const AllUser = () => {
       confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
       if (result.isConfirmed) {
-          fetch(`http://localhost:5000/users/${users._id}`, {
+          fetch(`https://summer-school-server-nahid-139.vercel.app/users/${users._id}`, {
               method: 'DELETE'
           })
               .then(res => res.json())
@@ -66,28 +67,12 @@ const AllUser = () => {
       }
   })
   };
-  // handleVerifyed
-  const handleVerifyed = id => {
-    fetch(
-      `http://localhost:5000/users/users/verifyed/${id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ verifyed: true }),
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        refetch();
-        toast.success("successfully verifyed");
-      });
-  };
 
   return (
     <div>
+      <Helmet>
+                <title>LinGo | All Users</title>
+            </Helmet>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -106,13 +91,6 @@ const AllUser = () => {
                 <td className="flex items-center">
                   {users.name}
                   <span className="ml-2 font-semibold">
-                    {users?.verifyed ? (
-                      <span className="text-blue-600">
-                        <FaCheckCircle />
-                      </span>
-                    ) : (
-                      "Not verify"
-                    )}
                   </span>
                 </td>
                 <td>{users?.email}</td>

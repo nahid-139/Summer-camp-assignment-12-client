@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { AuthContext } from '../../Context/UseContext';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useClasses from '../../../Hooks/useClasses';
 
+
 const LoadClasses = ({ item }) => {
+   
     const { name, availableSeats, price, _id,image_url ,description } = item;
     const { user } = useContext(AuthContext);
     const [, refetch] = useClasses();
@@ -15,7 +17,7 @@ const LoadClasses = ({ item }) => {
         console.log(item);
         if (user && user.email) {
             const classItem = { classItemId: _id, name, price, availableSeats, email: user.email }
-            fetch('http://localhost:5000/class', {
+            fetch('https://summer-school-server-nahid-139.vercel.app/class', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -74,7 +76,7 @@ const LoadClasses = ({ item }) => {
         <p className='text-slate-100'>Price: {price} $</p>
         <p className='text-slate-100'>Avialable Seats : {availableSeats}</p>
         <button onClick={() => handleAddToMyClass(item)}
-                    disabled={availableSeats === 0}
+                    disabled={availableSeats === 0 || user?.role === "admin" || user?.role === "instractor"}
                     className='bg-slate-900 text-white px-6 py-2 mt-4'>
                     Select Course</button>
     </div>

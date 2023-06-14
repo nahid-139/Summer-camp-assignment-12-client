@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -57,6 +58,9 @@ const Login = () => {
 
   return (
     <div className="lg:flex justify-center container mx-auto">
+      <Helmet>
+                <title>LinGo | Log In</title>
+            </Helmet>
         <div className="mt-6">
             <img src='' alt="" />
         </div>
