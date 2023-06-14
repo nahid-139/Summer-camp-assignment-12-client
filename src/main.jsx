@@ -27,12 +27,14 @@ import PrivateRoute from './Layout/PrivateRoute.jsx';
 import AddClass from './Components/Pages/AddClass/AddClass.jsx';
 import AllUsers from './Components/Pages/AllUsers/AllUsers.jsx';
 import InsMyClass from './Components/Pages/InsMyClass/InsMyClass.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
 
       {
@@ -61,6 +63,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/dashboard/myclasses',
