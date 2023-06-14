@@ -74,7 +74,7 @@ const DashBoard = () => {
                         <NavLink to='/dashboard/myclasses'>My classes</NavLink ></div>
                         </li>
                     <li>
-                        <div><FaDollarSign></FaDollarSign><Link>Payment</Link></div></li></>
+                        <div><FaDollarSign></FaDollarSign><Link to= '/dashboard/payment'>Payment</Link></div></li></>
                         }
                          {  user && users[0]?.role === "instractor" &&(
                             <>

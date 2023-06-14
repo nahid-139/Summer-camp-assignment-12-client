@@ -73,24 +73,32 @@ const Header = () => {
             </li>
 
 
-            { user && users[0]?.role === "user" &&<><Link
+            {user?.role === "instractor" ? (<><li>
+              <Link
+                to="/dashboard/addclasses"
+                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Dashboard
+              </Link>
+            </li>
+            </>):(<><Link
               to="/dashboard/myclasses"
               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
             >
               Dashboard
-            </Link></>}
-            { user && users[0]?.role === "admin" &&<><Link
+            </Link></>)}
+            {user?.role === "admin" ? (<><Link
               to="/dashboard/allusers"
               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
             >
               Dashboard
-            </Link></>}
-            { user && users[0]?.role === "instractor" &&<><Link
-              to="/dashboard/addclasses"
+            </Link></>):(<><Link
+              to="/dashboard/myclasses"
               className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
             >
               Dashboard
-            </Link></>}
+            </Link></>)}
+
 
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">

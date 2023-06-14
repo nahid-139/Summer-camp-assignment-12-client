@@ -2,6 +2,7 @@ import React from 'react';
 import useClasses from '../../../Hooks/useClasses';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Myclasses = () => {
     const [classes, refetch] = useClasses();
@@ -94,7 +95,7 @@ const Myclasses = () => {
                 <div className='mb-10 mt-6 flex justify-between'>
                 <h1 className='font-bold'>Total Class Selected {classes.length}</h1>
                 <h1 className='font-bold'>Total Price :{total}$</h1>
-                <button className="btn btn-ghost btn-xs bg-slate-600 text-white hover:bg-slate-500 px-10 ">Pay Now</button>
+                <Link to= '/dashboard/payment'><button className="btn btn-ghost btn-xs bg-slate-600 text-white hover:bg-slate-500 px-10 ">Pay Now</button></Link>
             </div>
             </div>
         </div>

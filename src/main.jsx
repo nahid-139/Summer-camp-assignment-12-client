@@ -29,6 +29,7 @@ import AllUsers from './Components/Pages/AllUsers/AllUsers.jsx';
 import InsMyClass from './Components/Pages/InsMyClass/InsMyClass.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import ManagClass from './Components/Pages/ManageClass/ManagClass.jsx';
+import Payment from './Components/Pages/Payment/Payment.jsx';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -89,6 +90,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/manageclass',
         element: <ManagClass></ManagClass>
+
+      },
+      {
+        path: '/dashboard/payment',
+        element: <Payment></Payment>
 
       }
     ]
