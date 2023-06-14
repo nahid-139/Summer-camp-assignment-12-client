@@ -17,7 +17,7 @@ const Instractors = () => {
              <Helmet>
                 <title>LinGo | Instractors</title>
             </Helmet>
-            <h1 className='text-center font-bold text-3xl mt-10 mb-4'> Hi I am your Instractor.</h1>
+            <h1 className='text-center font-bold text-3xl mt-10 mb-4'> Our Instractor.</h1>
 
             <div className ='grid grid-cols-2 mt-10 text-center mx-20'>
             {

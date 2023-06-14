@@ -23,7 +23,7 @@ const Classes = () => {
                 <title>LinGo | Classes</title>
             </Helmet>
 
-            <h1 className='text-center text-slate-900 font-bold text-4xl underline mb-20'>Hi Welcome Our classes.</h1>
+            <h1 className='text-center text-slate-900 font-bold text-4xl underline mb-20'> Our classes.</h1>
 
             <div className='grid grid-cols-2 gap-6 justify-items-center'>
             {
